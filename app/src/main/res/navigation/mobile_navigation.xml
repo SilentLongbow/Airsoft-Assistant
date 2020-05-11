@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_equipment">
+
+    <fragment
+        android:id="@+id/navigation_equipment"
+        android:name="nz.ac.uclive.mjk141.airsoftloadout.ui.equipment.EquipmentFragment"
+        android:label="@string/title_equipment"
+        tools:layout="@layout/fragment_equipment" />
+
+    <fragment
+        android:id="@+id/navigation_calendar"
+        android:name="nz.ac.uclive.mjk141.airsoftloadout.ui.calendar.CalendarFragment"
+        android:label="@string/title_calendar"
+        tools:layout="@layout/fragment_calendar" />
+
+    <fragment
+        android:id="@+id/navigation_map"
+        android:name="nz.ac.uclive.mjk141.airsoftloadout.ui.map.MapFragment"
+        android:label="@string/title_map"
+        tools:layout="@layout/fragment_map" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="nz.ac.uclive.mjk141.airsoftloadout.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
