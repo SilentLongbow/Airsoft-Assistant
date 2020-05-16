@@ -14,4 +14,6 @@
     <string name="sign_in_text">Sign In</string>
     <string name="login_text">Login</string>
     <string name="already_registered_text">Already a member?</string>
+    <string name="stored_user_credentials">credentialPreferences</string>
+    <string name="stored_user_id_key">logged-in-user</string>
 </resources>
