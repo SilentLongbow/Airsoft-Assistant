@@ -8,4 +8,23 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/atomic_age</item>
+        <item name="android:textColor">@android:color/secondary_text_light</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="credential_input_layout">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">0dp</item>
+        <item name="android:layout_marginEnd">0dp</item>
+        <item name="android:layout_marginTop">32dp</item>
+        <item name="android:ems">10</item>
+        <item name="android:drawablePadding">15dp</item>
+        <item name="android:importantForAutofill">no</item>
+    </style>
+
 </resources>
