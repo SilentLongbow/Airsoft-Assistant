@@ -7,7 +7,7 @@
     tools:context=".ui.profile.ProfileFragment">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/profile_icon"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
@@ -28,22 +28,22 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/profile_name_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Profile Name"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/profile_icon"
         app:layout_constraintTop_toTopOf="@+id/centre_horizontal_guideline" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/age_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Age"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="@+id/profile_name_text"
+        app:layout_constraintTop_toBottomOf="@+id/profile_name_text" />
 </androidx.constraintlayout.widget.ConstraintLayout>
