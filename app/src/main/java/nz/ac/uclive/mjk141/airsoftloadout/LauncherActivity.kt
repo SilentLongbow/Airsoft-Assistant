@@ -14,12 +14,9 @@ class LauncherActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val sharedPreferences = this.getSharedPreferences(getString(R.string.stored_user_credentials),
+        val sharedPreferences = this.getSharedPreferences(
+            getString(R.string.stored_user_credentials),
             Context.MODE_PRIVATE)
-        with (sharedPreferences.edit()) {
-            putLong(getString(R.string.stored_user_id_key), 1)
-            apply()
-        }
 
         val intent = when (sharedPreferences.getLong(getString(R.string.stored_user_id_key),
             SIGNED_OUT)) {
