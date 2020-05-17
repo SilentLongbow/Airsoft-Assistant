@@ -1,25 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/credential_registration"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/credential_registration"
     app:startDestination="@id/registrationFragment">
 
     <fragment
         android:id="@+id/registrationFragment"
         android:name="nz.ac.uclive.mjk141.airsoftloadout.ui.registration.RegistrationFragment"
-        android:label="RegistrationFragment" >
+        android:label="RegistrationFragment"
+        tools:layout="@layout/fragment_registration">
         <action
             android:id="@+id/action_registration_to_login"
             app:destination="@id/loginFragment"
-            app:popUpTo="@id/loginFragment"
-            app:popUpToInclusive="true" />
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="nz.ac.uclive.mjk141.airsoftloadout.ui.login.LoginFragment"
-        android:label="LoginFragment" >
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
         <action
-            android:id="@+id/action_loginFragment_to_registrationFragment2"
+            android:id="@+id/action_login_to_registration"
             app:destination="@id/registrationFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
             app:popUpTo="@id/registrationFragment"
             app:popUpToInclusive="true" />
     </fragment>

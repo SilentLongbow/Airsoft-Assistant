@@ -11,12 +11,13 @@
     <style name="title">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:fontFamily">@font/atomic_age</item>
+        <item name="android:fontFamily">@font/allerta_stencil</item>
         <item name="android:textColor">@android:color/secondary_text_light</item>
         <item name="android:textSize">30sp</item>
     </style>
 
     <style name="credential_input_layout">
+        <item name="android:fontFamily">@font/allerta_stencil</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginStart">0dp</item>
@@ -30,6 +31,23 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="credentials_other_window_prompt">
+        <item name="android:fontFamily">@font/allerta_stencil</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="credentials_button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:background">@color/registerBackground</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:fontFamily">@font/allerta_stencil</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
     </style>
 
 </resources>

@@ -16,4 +16,5 @@
     <string name="already_registered_text">Already a member?</string>
     <string name="stored_user_credentials">credentialPreferences</string>
     <string name="stored_user_id_key">logged-in-user</string>
+    <string name="not_a_member_prompt">Not a member?</string>
 </resources>
