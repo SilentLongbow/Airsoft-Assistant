@@ -36,7 +36,7 @@ class RegistrationFragment : Fragment() {
         val database = LoadoutDatabase.getInstance(application).userDao
         val viewModelFactory = RegistrationViewModelFactory(database)
         sharedPreferences = requireNotNull(activity).getSharedPreferences(
-            getString(R.string.stored_user_credentials),
+            requireNotNull(activity).packageName,
             Context.MODE_PRIVATE
         )
 

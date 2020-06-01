@@ -1,0 +1,45 @@
+[
+  {
+    "name": "The Arena",
+    "latLng": {
+      "latitude": -43.514550,
+      "longitude": 172.490161
+    },
+    "address": {
+      "streetNumber": "504",
+      "street": "Buchanans Road",
+      "city": "Christchurch",
+      "country": "New Zealand"
+    },
+    "description": "A good mix of close and medium ranges."
+  },
+  {
+    "name": "Zone 67",
+    "latLng": {
+      "latitude": -43.560831,
+      "longitude": 172.692485
+    },
+    "address": {
+      "streetNumber": "67",
+      "street": "Kennaway Road",
+      "city": "Christchurch",
+      "country": "New Zealand"
+
+    },
+    "description": "A great indoors arena to get that CQB itch scratched."
+  },
+  {
+    "name": "First Strike Airsoft",
+    "latLng": {
+      "latitude": -43.467407,
+      "longitude": 172.454395
+    },
+    "address": {
+      "streetNumber": "805B",
+      "street": "Mcleans Island Road",
+      "city": "Christchurch",
+      "country": "New Zealand"
+    },
+    "description": "For those after the MilSim experience. Own equipment required."
+  }
+]

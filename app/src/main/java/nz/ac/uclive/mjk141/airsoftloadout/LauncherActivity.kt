@@ -17,10 +17,8 @@ class LauncherActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val sharedPreferences = this.getSharedPreferences(
-            getString(R.string.stored_user_credentials),
+            packageName,
             Context.MODE_PRIVATE)
-
-        resetLogin(sharedPreferences)
 
         val intent = when (sharedPreferences.getLong(getString(R.string.stored_user_id_key), SIGNED_OUT)) {
             SIGNED_OUT -> registerActivityIntent()
@@ -32,13 +30,6 @@ class LauncherActivity : AppCompatActivity() {
 
         startActivity(intent)
         finish()
-    }
-
-    private fun resetLogin(sharedPreferences: SharedPreferences) {
-        with (sharedPreferences.edit()) {
-            remove(getString(R.string.stored_user_id_key))
-            commit()
-        }
     }
 
     private fun registerActivityIntent() = Intent(this, RegisterActivity::class.java)

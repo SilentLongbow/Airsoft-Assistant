@@ -8,6 +8,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import nz.ac.uclive.mjk141.airsoftloadout.ui.preferences.ApplicationPreferences
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,12 +23,15 @@ class MainActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_equipment,
-                R.id.navigation_calendar,
                 R.id.navigation_map,
                 R.id.navigation_profile
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.settings, ApplicationPreferences())
     }
 }

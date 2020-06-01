@@ -35,7 +35,7 @@ class LoginFragment : Fragment() {
         val viewModelFactory = LoginViewModelFactory(database)
 
         sharedPreferences = requireNotNull(activity).getSharedPreferences(
-            getString(R.string.stored_user_credentials),
+            requireNotNull(activity).packageName,
             Context.MODE_PRIVATE
         )
 
