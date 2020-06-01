@@ -2,8 +2,10 @@ package nz.ac.uclive.mjk141.airsoftloadout
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import nz.ac.uclive.mjk141.airsoftloadout.utils.SIGNED_OUT
 
 /*
@@ -18,8 +20,9 @@ class LauncherActivity : AppCompatActivity() {
             getString(R.string.stored_user_credentials),
             Context.MODE_PRIVATE)
 
-        val intent = when (sharedPreferences.getLong(getString(R.string.stored_user_id_key),
-            SIGNED_OUT)) {
+        resetLogin(sharedPreferences)
+
+        val intent = when (sharedPreferences.getLong(getString(R.string.stored_user_id_key), SIGNED_OUT)) {
             SIGNED_OUT -> registerActivityIntent()
             else -> mainActivityIntent()
         }
@@ -29,6 +32,13 @@ class LauncherActivity : AppCompatActivity() {
 
         startActivity(intent)
         finish()
+    }
+
+    private fun resetLogin(sharedPreferences: SharedPreferences) {
+        with (sharedPreferences.edit()) {
+            remove(getString(R.string.stored_user_id_key))
+            commit()
+        }
     }
 
     private fun registerActivityIntent() = Intent(this, RegisterActivity::class.java)

@@ -1,121 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/registerBackground"
-    tools:ignore="Autofill">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/sign_up_title"
-        style="@style/title"
-        android:text="@string/sign_up_text"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.17" />
+        <variable
+            name="registrationViewModel"
+            type="nz.ac.uclive.mjk141.airsoftloadout.ui.registration.RegistrationViewModel" />
+    </data>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/registerBackground"
+        tools:ignore="Autofill">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/sign_up_title"
+            style="@style/title"
+            android:text="@string/sign_up_text"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/username_text_input"
-                style="@style/credential_input_layout"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:drawableStart="@drawable/ic_person_outline_black_24dp"
-                android:hint="@string/username_input_hint"
-                android:inputType="textNoSuggestions"
-                app:layout_constraintBottom_toTopOf="@+id/email_text_input"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                app:layout_constraintVertical_chainStyle="packed" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.17" />
 
-            <EditText
-                android:id="@+id/email_text_input"
-                style="@style/credential_input_layout"
-                android:drawableStart="@drawable/ic_mail_outline_black_24dp"
-                android:hint="@string/email_input_hint"
-                android:inputType="textEmailAddress"
-                app:layout_constraintBottom_toTopOf="@+id/password_text_input"
-                app:layout_constraintEnd_toEndOf="@+id/username_text_input"
-                app:layout_constraintStart_toStartOf="@+id/username_text_input"
-                app:layout_constraintTop_toBottomOf="@+id/username_text_input" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline">
 
-            <EditText
-                android:id="@+id/password_text_input"
-                style="@style/credential_input_layout"
-                android:drawableStart="@drawable/ic_lock_outline_black_24dp"
-                android:hint="@string/password_input_hint"
-                android:inputType="textPassword"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/email_text_input"
-                app:layout_constraintStart_toStartOf="@+id/email_text_input"
-                app:layout_constraintTop_toBottomOf="@+id/email_text_input" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <Button
-                android:id="@+id/sign_up_button"
-                style="@style/credentials_button"
-                android:text="@string/sign_up_button_text"
-                app:layout_constraintBottom_toTopOf="@id/already_member_text"
-                app:layout_constraintEnd_toEndOf="@+id/password_text_input"
-                app:layout_constraintStart_toStartOf="@+id/halfway_vertical_guideline"
-                app:layout_constraintTop_toBottomOf="@+id/password_text_input"
-                app:layout_constraintVertical_bias=".1"
-                app:layout_constraintVertical_chainStyle="packed" />
+                <EditText
+                    android:id="@+id/username_text_input"
+                    style="@style/credential_input_layout"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:drawableStart="@drawable/ic_person_outline_black_24dp"
+                    android:hint="@string/username_input_hint"
+                    android:inputType="textNoSuggestions"
+                    android:text="@={registrationViewModel.username}"
+                    app:layout_constraintBottom_toTopOf="@+id/email_text_input"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintVertical_chainStyle="packed" />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/halfway_vertical_guideline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent=".5" />
+                <EditText
+                    android:id="@+id/email_text_input"
+                    style="@style/credential_input_layout"
+                    android:drawableStart="@drawable/ic_mail_outline_black_24dp"
+                    android:hint="@string/email_input_hint"
+                    android:inputType="textEmailAddress"
+                    android:text="@={registrationViewModel.userEmail}"
+                    app:layout_constraintBottom_toTopOf="@+id/password_text_input"
+                    app:layout_constraintEnd_toEndOf="@+id/username_text_input"
+                    app:layout_constraintStart_toStartOf="@+id/username_text_input"
+                    app:layout_constraintTop_toBottomOf="@+id/username_text_input" />
 
-            <TextView
-                android:id="@+id/sign_in_clickable_label"
-                style="@style/credentials_other_window_prompt"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:clickable="true"
-                android:text="@string/login_text"
-                android:textColor="#0000EE"
-                app:layout_constraintBottom_toBottomOf="@+id/already_member_text"
-                app:layout_constraintEnd_toEndOf="@+id/sign_up_button"
-                app:layout_constraintStart_toEndOf="@id/already_member_text"
-                app:layout_constraintTop_toTopOf="@+id/already_member_text" />
+                <EditText
+                    android:id="@+id/password_text_input"
+                    style="@style/credential_input_layout"
+                    android:drawableStart="@drawable/ic_lock_outline_black_24dp"
+                    android:hint="@string/password_input_hint"
+                    android:inputType="textPassword"
+                    android:text="@={registrationViewModel.userPassword}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/email_text_input"
+                    app:layout_constraintStart_toStartOf="@+id/email_text_input"
+                    app:layout_constraintTop_toBottomOf="@+id/email_text_input" />
 
-            <TextView
-                android:id="@+id/already_member_text"
-                style="@style/credentials_other_window_prompt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/already_registered_text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/sign_in_clickable_label"
-                app:layout_constraintStart_toStartOf="@+id/sign_up_button"
-                app:layout_constraintTop_toBottomOf="@+id/sign_up_button"
-                app:layout_constraintVertical_bias="0.06" />
+                <Button
+                    android:id="@+id/sign_up_button"
+                    style="@style/credentials_button"
+                    android:text="@string/sign_up_text"
+                    app:layout_constraintBottom_toTopOf="@id/already_member_text"
+                    app:layout_constraintEnd_toEndOf="@+id/password_text_input"
+                    app:layout_constraintStart_toStartOf="@+id/halfway_vertical_guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/password_text_input"
+                    app:layout_constraintVertical_bias=".1"
+                    app:layout_constraintVertical_chainStyle="packed" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/halfway_vertical_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".5" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/sign_in_clickable_label"
+                    style="@style/credentials_other_window_prompt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:clickable="true"
+                    android:text="@string/login_text"
+                    android:textColor="#0000EE"
+                    app:layout_constraintBottom_toBottomOf="@+id/already_member_text"
+                    app:layout_constraintEnd_toEndOf="@+id/sign_up_button"
+                    app:layout_constraintStart_toEndOf="@id/already_member_text"
+                    app:layout_constraintTop_toTopOf="@+id/already_member_text" />
+
+                <TextView
+                    android:id="@+id/already_member_text"
+                    style="@style/credentials_other_window_prompt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/already_registered_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/sign_in_clickable_label"
+                    app:layout_constraintStart_toStartOf="@+id/sign_up_button"
+                    app:layout_constraintTop_toBottomOf="@+id/sign_up_button"
+                    app:layout_constraintVertical_bias="0.06" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

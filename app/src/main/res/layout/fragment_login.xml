@@ -1,111 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/registerBackground"
-    tools:ignore="Autofill">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/login_title"
-        style="@style/title"
-        android:text="@string/login_text"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.17" />
+        <variable
+            name="loginViewModel"
+            type="nz.ac.uclive.mjk141.airsoftloadout.ui.login.LoginViewModel" />
+    </data>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/registerBackground"
+        tools:ignore="Autofill">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/login_title"
+            style="@style/title"
+            android:text="@string/login_text"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/email_text_input"
-                style="@style/credential_input_layout"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:drawableStart="@drawable/ic_mail_outline_black_24dp"
-                android:hint="@string/email_input_hint"
-                android:inputType="textEmailAddress"
-                app:layout_constraintBottom_toTopOf="@+id/password_text_input"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                app:layout_constraintVertical_chainStyle="packed" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.17" />
 
-            <EditText
-                android:id="@+id/password_text_input"
-                style="@style/credential_input_layout"
-                android:drawableStart="@drawable/ic_lock_outline_black_24dp"
-                android:hint="@string/password_input_hint"
-                android:inputType="textPassword"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/email_text_input"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/email_text_input"
-                app:layout_constraintTop_toBottomOf="@+id/email_text_input" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline">
 
-            <Button
-                android:id="@+id/login_button"
-                style="@style/credentials_button"
-                android:text="@string/login_text"
-                app:layout_constraintBottom_toTopOf="@+id/not_a_member_prompt"
-                app:layout_constraintEnd_toEndOf="@+id/password_text_input"
-                app:layout_constraintStart_toStartOf="@+id/guideline2"
-                app:layout_constraintTop_toBottomOf="@+id/password_text_input"
-                app:layout_constraintVertical_bias="0.050000012"
-                app:layout_constraintVertical_chainStyle="packed" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent=".5" />
+                <EditText
+                    android:id="@+id/email_text_input"
+                    style="@style/credential_input_layout"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:drawableStart="@drawable/ic_mail_outline_black_24dp"
+                    android:hint="@string/email_input_hint"
+                    android:inputType="textEmailAddress"
+                    android:text="@={loginViewModel.email}"
+                    app:layout_constraintBottom_toTopOf="@+id/password_text_input"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintVertical_chainStyle="packed" />
 
-            <TextView
-                android:id="@+id/not_a_member_prompt"
-                style="@style/credentials_other_window_prompt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/not_a_member_prompt"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/sign_up_clickable_label"
-                app:layout_constraintStart_toStartOf="@+id/login_button"
-                app:layout_constraintTop_toBottomOf="@+id/login_button"
-                app:layout_constraintVertical_bias="0.06" />
+                <EditText
+                    android:id="@+id/password_text_input"
+                    style="@style/credential_input_layout"
+                    android:drawableStart="@drawable/ic_lock_outline_black_24dp"
+                    android:hint="@string/password_input_hint"
+                    android:inputType="textPassword"
+                    android:text="@={loginViewModel.password}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/email_text_input"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/email_text_input"
+                    app:layout_constraintTop_toBottomOf="@+id/email_text_input" />
 
-            <TextView
-                android:id="@+id/sign_up_clickable_label"
-                style="@style/credentials_other_window_prompt"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:clickable="true"
-                android:text="@string/sign_up_text"
-                android:textColor="#0000EE"
-                app:layout_constraintBottom_toBottomOf="@+id/not_a_member_prompt"
-                app:layout_constraintEnd_toEndOf="@id/login_button"
-                app:layout_constraintStart_toEndOf="@+id/not_a_member_prompt"
-                app:layout_constraintTop_toTopOf="@+id/not_a_member_prompt" />
+                <Button
+                    android:id="@+id/login_button"
+                    style="@style/credentials_button"
+                    android:text="@string/login_text"
+                    app:layout_constraintBottom_toTopOf="@+id/not_a_member_prompt"
+                    app:layout_constraintEnd_toEndOf="@+id/password_text_input"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@+id/password_text_input"
+                    app:layout_constraintVertical_bias="0.050000012"
+                    app:layout_constraintVertical_chainStyle="packed" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".5" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/not_a_member_prompt"
+                    style="@style/credentials_other_window_prompt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/not_a_member_prompt"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/sign_up_clickable_label"
+                    app:layout_constraintStart_toStartOf="@+id/login_button"
+                    app:layout_constraintTop_toBottomOf="@+id/login_button"
+                    app:layout_constraintVertical_bias="0.06"
+                    tools:text="@string/not_a_member_prompt" />
+
+                <TextView
+                    android:id="@+id/sign_up_clickable_label"
+                    style="@style/credentials_other_window_prompt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:clickable="true"
+                    android:text="@string/sign_up_text"
+                    android:textColor="#0000EE"
+                    app:layout_constraintBottom_toBottomOf="@+id/not_a_member_prompt"
+                    app:layout_constraintEnd_toEndOf="@id/login_button"
+                    app:layout_constraintStart_toEndOf="@+id/not_a_member_prompt"
+                    app:layout_constraintTop_toTopOf="@+id/not_a_member_prompt" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

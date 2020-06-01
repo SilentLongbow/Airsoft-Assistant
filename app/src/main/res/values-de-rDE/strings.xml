@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Airsoft Loadout</string>
+    <string name="title_map">Karte</string>
+    <string name="title_profile">Profil</string>
+    <string name="title_equipment">Ausrüstung</string>
+    <string name="title_calendar">Kalendar</string>
+    <string name="title_settings">Einstellungen</string>
+    <string name="sign_up_text">Registrieren</string>
+    <string name="title_activity_main">MainAktivität</string>
+    <string name="username_input_hint">Benutzername</string>
+    <string name="email_input_hint">E-Mail</string>
+    <string name="password_input_hint">Passwort</string>
+    <string name="sign_in_text">Anmelden</string>
+    <string name="login_text">Anmelden</string>
+    <string name="already_registered_text">Schon bei uns?</string>
+    <string name="not_a_member_prompt">Sie haben kein Konto?</string>
+    <string name="invalid_username_length">Der Benutzername muss 3 bis 16 Buchstaben lang sein</string>
+    <string name="invalid_email">Ungültige E-Mail-Adresse</string>
+    <string name="invalid_password_length">Das Passwort muss mindestens 5 Buchstaben lang sein</string>
+    <string name="username_exists_message">Der Benutzername ist schon in Benutzung</string>
+    <string name="email_exists_message">Die E-Mail-Adresse ist schon in Benutzung</string>
+    <string name="incorrect_email_text">Die angegebene E-Mail ist falsch</string>
+    <string name="incorrect_password_text">Falsches Passwort</string>
+</resources>

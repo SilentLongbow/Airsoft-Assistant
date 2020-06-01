@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AirsoftLoadout</string>
+    <string name="app_name">Airsoft Loadout</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_map">Map</string>
     <string name="title_profile">Profile</string>
@@ -10,11 +10,17 @@
     <string name="username_input_hint">Username</string>
     <string name="email_input_hint">Email</string>
     <string name="password_input_hint">Password</string>
-    <string name="sign_up_button_text">Sign Up</string>
     <string name="sign_in_text">Sign In</string>
     <string name="login_text">Login</string>
     <string name="already_registered_text">Already a member?</string>
-    <string name="stored_user_credentials">credentialPreferences</string>
-    <string name="stored_user_id_key">logged-in-user</string>
+    <string name="stored_user_credentials" translatable="false">credentialPreferences</string>
+    <string name="stored_user_id_key" translatable="false">logged-in-user</string>
     <string name="not_a_member_prompt">Not a member?</string>
+    <string name="invalid_username_length">Username must be 3 to 16 characters long</string>
+    <string name="invalid_email">Invalid email address</string>
+    <string name="invalid_password_length">Password must be at least 5 characters long</string>
+    <string name="username_exists_message">Username already in use</string>
+    <string name="email_exists_message">Email address already in use</string>
+    <string name="incorrect_email_text">The provided email is incorrect</string>
+    <string name="incorrect_password_text">Incorrect password</string>
 </resources>
