@@ -4,9 +4,8 @@ import android.app.NotificationManager
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.preference.*
+import androidx.preference.PreferenceFragmentCompat
 import nz.ac.uclive.mjk141.airsoftloadout.MainActivity
 import nz.ac.uclive.mjk141.airsoftloadout.R
 import nz.ac.uclive.mjk141.airsoftloadout.utils.NOTIFICATION_CHANNEL_ID

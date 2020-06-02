@@ -2,10 +2,8 @@ package nz.ac.uclive.mjk141.airsoftloadout
 
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.PreferenceManager
 import nz.ac.uclive.mjk141.airsoftloadout.utils.SIGNED_OUT

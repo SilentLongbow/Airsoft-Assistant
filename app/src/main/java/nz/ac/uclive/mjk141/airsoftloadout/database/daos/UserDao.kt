@@ -1,6 +1,7 @@
 package nz.ac.uclive.mjk141.airsoftloadout.database.daos
 
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Query
 import nz.ac.uclive.mjk141.airsoftloadout.database.tables.User
 
 @Dao

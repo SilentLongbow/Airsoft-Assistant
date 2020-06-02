@@ -1,7 +1,6 @@
 package nz.ac.uclive.mjk141.airsoftloadout.ui.map
 
 import android.Manifest
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
@@ -14,24 +13,19 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.preference.PreferenceManager
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.model.*
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MapStyleOptions
+import com.google.android.gms.maps.model.MarkerOptions
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import kotlinx.android.synthetic.main.fragment_map.*
-import kotlinx.android.synthetic.main.fragment_map.view.*
 import nz.ac.uclive.mjk141.airsoftloadout.R
 import nz.ac.uclive.mjk141.airsoftloadout.data.AirsoftLocation
 import nz.ac.uclive.mjk141.airsoftloadout.databinding.FragmentMapBinding
@@ -39,7 +33,6 @@ import nz.ac.uclive.mjk141.airsoftloadout.utils.LOCATION_MANAGER_MAX_DISTANCE
 import nz.ac.uclive.mjk141.airsoftloadout.utils.LOCATION_MANAGER_MIN_TIME
 import nz.ac.uclive.mjk141.airsoftloadout.utils.REQUEST_LOCATION_PERMISSION
 import nz.ac.uclive.mjk141.airsoftloadout.utils.getJsonDataFromAssets
-import java.util.*
 
 class MapFragment : Fragment(), OnMapReadyCallback, LocationListener {
 
