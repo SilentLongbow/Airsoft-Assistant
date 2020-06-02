@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <SwitchPreferenceCompat
-        app:key="notifications"
-        app:title="Enable weekend reminders" />
+    <PreferenceCategory
+        app:title="@string/notifications_category_title">
+        <SwitchPreferenceCompat
+            app:defaultValue="false"
+            app:key="@string/disable_notifications_pref_key"
+            app:title="@string/disable_notifications_pref_title"
+            app:icon="@drawable/ic_baseline_notifications_24"/>
+    </PreferenceCategory>
 
-    <Preference
-        app:key="feedback"
-        app:title="Send Feedback"
-        app:summary="Report technical issues or suggest new features" />
+    <PreferenceCategory
+        app:title="@string/app_theme_category_title">
+        <SwitchPreferenceCompat
+            app:defaultValue="false"
+            app:key="@string/enable_dark_mode_pref_key"
+            app:title="@string/enable_dark_mode_pref_title"
+            app:icon="@drawable/ic_baseline_color_lens_24"/>
+    </PreferenceCategory>
 
 </PreferenceScreen>

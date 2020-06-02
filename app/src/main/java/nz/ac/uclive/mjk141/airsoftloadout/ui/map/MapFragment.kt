@@ -3,6 +3,7 @@ package nz.ac.uclive.mjk141.airsoftloadout.ui.map
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.content.res.Resources
 import android.location.Location
@@ -19,6 +20,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.preference.PreferenceManager
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -49,6 +51,10 @@ class MapFragment : Fragment(), OnMapReadyCallback, LocationListener {
 
     private val TAG = MapFragment::class.java.simpleName
 
+    private lateinit var darkModePreferenceKey: String
+
+    private lateinit var sharedPreferences: SharedPreferences
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -62,8 +68,10 @@ class MapFragment : Fragment(), OnMapReadyCallback, LocationListener {
 
         binding.mapView.onCreate(savedInstanceState)
         binding.mapView.getMapAsync(this)
+        darkModePreferenceKey = getString(R.string.enable_dark_mode_pref_key)
 
         locationManager = requireNotNull(activity).getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity)
 
         return binding.root
     }
@@ -133,10 +141,16 @@ class MapFragment : Fragment(), OnMapReadyCallback, LocationListener {
 
     private fun setMapStyle(map: GoogleMap) {
         try {
+            val darkModeEnabled = sharedPreferences.getBoolean(darkModePreferenceKey, false)
+            val mapStyleResource = if (darkModeEnabled) {
+                R.raw.map_style_dark_mode
+            } else {
+                R.raw.map_style
+            }
             val success = map.setMapStyle(
                 MapStyleOptions.loadRawResourceStyle(
                     context,
-                    R.raw.map_style_dark_mode
+                    mapStyleResource
                 )
             )
             if (!success) {

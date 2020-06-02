@@ -23,4 +23,15 @@
     <string name="incorrect_email_text">The provided email is incorrect</string>
     <string name="incorrect_password_text">Incorrect password</string>
     <string name="store_locations_filename" translatable="false">airsoft_field_locations.json</string>
+    <string name="notification_title">Be a Mindful Airsoft Gun Owner</string>
+    <string name="notification_text">Only have your gun visible out on the field.</string>
+    <string name="title_preferences">Settings</string>
+    <string name="disable_notifications_pref_key" translatable="false">disable_notifications</string>
+    <string name="disable_notifications_pref_title">Disable Notifications</string>
+    <string name="notifications_category_title">Notifications</string>
+    <string name="app_theme_category_title">App Theme</string>
+    <string name="enable_dark_mode_pref_key" translatable="false">enable_dark_mode</string>
+    <string name="enable_dark_mode_pref_title">Dark Mode</string>
+    <string name="channel_name" translatable="false">care_with_gun_reminder</string>
+    <string name="channel_description" translatable="false">Notification channel used to alter the user to be careful with their guns in public.</string>
 </resources>

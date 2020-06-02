@@ -21,4 +21,11 @@
     <string name="email_exists_message">Die E-Mail-Adresse ist schon in Benutzung</string>
     <string name="incorrect_email_text">Die angegebene E-Mail ist falsch</string>
     <string name="incorrect_password_text">Falsches Passwort</string>
+    <string name="notification_title">Bleiben Sie ein aufmerksamer Airsoft-Waffenbesitzer</string>
+    <string name="notification_text">Lassen Sie Ihre Waffe nur auf dem Feld sichtbar sein.</string>
+    <string name="title_preferences">Einstellungen</string>
+    <string name="disable_notifications_pref_title">Benachrichtigungen deaktivieren</string>
+    <string name="notifications_category_title">Benachrichtigungen</string>
+    <string name="app_theme_category_title">App-Thema</string>
+    <string name="enable_dark_mode_pref_title">Dunkel Modus</string>
 </resources>

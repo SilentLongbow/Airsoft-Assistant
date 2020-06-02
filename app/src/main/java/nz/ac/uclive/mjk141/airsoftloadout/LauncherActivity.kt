@@ -6,6 +6,8 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.preference.PreferenceManager
 import nz.ac.uclive.mjk141.airsoftloadout.utils.SIGNED_OUT
 
 /*
@@ -15,6 +17,19 @@ class LauncherActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        PreferenceManager.getDefaultSharedPreferences(this).let {
+            val enableDarkMode = it.getBoolean(getString(R.string.enable_dark_mode_pref_key), false)
+            if (enableDarkMode) {
+                AppCompatDelegate.setDefaultNightMode(
+                    AppCompatDelegate.MODE_NIGHT_YES
+                )
+            } else {
+                AppCompatDelegate.setDefaultNightMode(
+                    AppCompatDelegate.MODE_NIGHT_NO
+                )
+            }
+        }
 
         val sharedPreferences = this.getSharedPreferences(
             packageName,

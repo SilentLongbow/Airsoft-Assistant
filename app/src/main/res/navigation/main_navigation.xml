@@ -17,8 +17,7 @@
         android:label="@string/title_map"
         tools:layout="@layout/fragment_map" />
     <fragment
-        android:id="@+id/navigation_profile"
-        android:name="nz.ac.uclive.mjk141.airsoftloadout.ui.profile.ProfileFragment"
-        android:label="@string/title_profile"
-        tools:layout="@layout/fragment_profile" />
+        android:id="@+id/navigation_preferences"
+        android:name="nz.ac.uclive.mjk141.airsoftloadout.ui.preferences.ApplicationPreferences"
+        android:label="@string/title_preferences" />
 </navigation>
