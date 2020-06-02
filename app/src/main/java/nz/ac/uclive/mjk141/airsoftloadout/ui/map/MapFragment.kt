@@ -2,6 +2,7 @@ package nz.ac.uclive.mjk141.airsoftloadout.ui.map
 
 import android.Manifest
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.content.res.Resources
@@ -10,9 +11,7 @@ import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -66,7 +65,37 @@ class MapFragment : Fragment(), OnMapReadyCallback, LocationListener {
         locationManager = requireNotNull(activity).getSystemService(Context.LOCATION_SERVICE) as LocationManager
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity)
 
+        setHasOptionsMenu(true)
+
         return binding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.map_app_bar_menu, menu)
+        if (null == createShareIntent().resolveActivity(requireActivity().packageManager)) {
+            menu.findItem(R.id.share)?.setVisible(false)
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.share -> shareInExperience()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun shareInExperience() {
+        startActivity(createShareIntent())
+    }
+
+    private fun createShareIntent(): Intent {
+        val shareIntent = Intent(Intent.ACTION_SEND)
+        shareIntent.type = "text/plain"
+        shareIntent
+            .putExtra(Intent.EXTRA_TEXT, getString(R.string.share_intent_value))
+        return shareIntent
+
     }
 
     private fun loadLocations() {

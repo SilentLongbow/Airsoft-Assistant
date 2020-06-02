@@ -28,4 +28,9 @@
     <string name="notifications_category_title">Benachrichtigungen</string>
     <string name="app_theme_category_title">App-Thema</string>
     <string name="enable_dark_mode_pref_title">Dunkel Modus</string>
+    <string name="my_loadout_image_description">Mein Loadout</string>
+    <string name="take_new_picture_button_text">Mach ein neues Foto</string>
+    <string name="take_photo">Mach das Foto</string>
+    <string name="share_experience">Erfahrung teilen</string>
+    <string name="share_intent_value">Möchtest du Airsoft spielen? Besuch https://thearena.co.nz oder https://www.zone67.co.nz um mehr zu lernen.</string>
 </resources>

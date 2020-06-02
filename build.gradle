@@ -6,6 +6,7 @@ buildscript {
         version_navigation = '1.0.0'
         version_room = '2.2.5'
         version_gradle = '3.6.1'
+        camerax_version = '1.0.0-beta03'
     }
 
     repositories {

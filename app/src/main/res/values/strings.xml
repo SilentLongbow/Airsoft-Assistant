@@ -34,4 +34,9 @@
     <string name="enable_dark_mode_pref_title">Dark Mode</string>
     <string name="channel_name" translatable="false">care_with_gun_reminder</string>
     <string name="channel_description" translatable="false">Notification channel used to alter the user to be careful with their guns in public.</string>
+    <string name="my_loadout_image_description">My loadout</string>
+    <string name="take_new_picture_button_text">Take new picture</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="share_intent_value">Want to try Airsoft? Take a look at https://www.zone67.co.nz or https://thearena.co.nz.</string>
+    <string name="share_experience">Share Experience</string>
 </resources>
